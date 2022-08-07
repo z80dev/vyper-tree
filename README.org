@@ -7,9 +7,16 @@ When run as an executable, source code is read from `stdin`, parsed to a vyper A
 - `python` >= 3.10
 ** Installation
 via `pipx` (for use as an executable)
-`pipx install vyper-tree`
+
+#+begin_src shell
+pipx install vyper-tree
+#+end_src
+
 via `pip` (for use as a module)
+
+#+begin_src  shell
 `pip install vyper-tree`
+#+end_src
 ** Examples
 #+begin_src shell
 
