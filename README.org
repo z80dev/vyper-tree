@@ -1,0 +1,55 @@
+#+title: Vyper Tree
+* Pretty print vyper AST trees
+Vyper-Tree can be run as an executable or imported as a module for use in your own programs.
+
+When run as an executable, source code is read from `stdin`, parsed to a vyper AST, and printed to stdout.
+** Examples
+src_shell[]{ cat example.vy | python vyper_tree}
+#+begin_src  shell
+Contract
+├── VariableDecl
+│   ├── greet
+│   └── Call
+│       ├── public
+│       └── Subscript
+│           ├── String
+│           └── Index
+│               └── Int: 100
+├── Function __init__
+│   ├── external
+│   ├── Arguments (count: 0)
+│   └── Assign
+│       ├── greet
+│       │   └── self
+│       └── "Hello World"
+└── Function foo
+    ├── external
+    ├── Arguments (count: 1)
+    │   └── x
+    │       └── uint256
+    ├── uint256
+    ├── AnnAssign
+    │   ├── val
+    │   ├── uint256
+    │   └── Int: 0
+    ├── For
+    │   ├── i
+    │   ├── Call
+    │   │   ├── range
+    │   │   └── Int: 100000
+    │   ├── AugAssign
+    │   │   ├── val
+    │   │   ├── Add
+    │   │   └── Int: 1
+    │   └── If
+    │       ├── UnaryOp
+    │       │   ├── Not
+    │       │   └── Compare
+    │       │       ├── val
+    │       │       ├── Lt
+    │       │       └── x
+    │       └── Break
+    └── Return
+        └── val
+
+#+end_src
