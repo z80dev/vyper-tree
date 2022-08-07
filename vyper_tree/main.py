@@ -101,7 +101,7 @@ def main():
         print_folded_ast(src, console)
         return
     else:
-        print_unfolded_ast(src, console)
+        print_ast(src, console)
 
 if __name__ == "__main__":
     main()
