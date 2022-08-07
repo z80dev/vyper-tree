@@ -47,6 +47,7 @@ def ast_to_rich_tree(node, rich_tree=None):
         rich_tree = Tree(node_printer(node))
     else:
         rich_tree = rich_tree.add(node_printer(node))
+
     for child_node in node.get_children():
         ast_to_rich_tree(child_node, rich_tree)
     return rich_tree
@@ -64,7 +65,7 @@ def main():
 
     ast = phases.generate_ast(src, 0, "")
     if args.fold:
-        ast = phases.generate_folded_ast(ast, None)
+        (ast, _) = phases.generate_folded_ast(ast, None)
 
     tree = ast_to_rich_tree(ast)
     console.print(tree)
