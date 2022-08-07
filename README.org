@@ -17,6 +17,18 @@ via `pip` (for use as a module)
 #+begin_src  shell
 pip install vyper-tree
 #+end_src
+** Arguments
+#+begin_src shell
+vyper-tree --help
+print vyper ASTs
+
+options:
+  -h, --help        show this help message and exit
+  --force-terminal  pass `force_terminal=True` to rich's console constructor.
+                    Use for overriding terminal detection and including
+                    colorized output even for file outputs.
+  --fold            export folded AST
+#+end_src
 ** Examples
 #+begin_src shell
 
