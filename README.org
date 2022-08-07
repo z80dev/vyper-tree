@@ -4,7 +4,9 @@ Vyper-Tree can be run as an executable or imported as a module for use in your o
 
 When run as an executable, source code is read from `stdin`, parsed to a vyper AST, and printed to stdout.
 ** Examples
-src_shell[]{ cat example.vy | python vyper_tree}
+#+begin_src shell
+cat example.vy | python vyper_tree
+#+end_src
 #+begin_src  shell
 Contract
 ├── VariableDecl
