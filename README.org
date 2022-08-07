@@ -3,6 +3,13 @@
 Vyper-Tree can be run as an executable or imported as a module for use in your own programs.
 
 When run as an executable, source code is read from `stdin`, parsed to a vyper AST, and printed to stdout.
+** Requirements
+- `python` >= 3.10
+** Installation
+via `pipx` (for use as an executable)
+`pipx install vyper-tree`
+via `pip` (for use as a module)
+`pip install vyper-tree`
 ** Examples
 #+begin_src shell
 cat example.vy | python vyper_tree
