@@ -13,7 +13,7 @@ via `pip` (for use as a module)
 ** Examples
 #+begin_src shell
 
-cat example.vy | python vyper_tree
+cat example.vy | vyper_tree
 #+end_src
 #+begin_src  shell
 Contract
