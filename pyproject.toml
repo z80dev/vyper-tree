@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vyper-tree"
-version = "0.1.10"
+version = "0.1.11"
 description = ""
 authors = ["z80 <z80@ophy.xyz>"]
 homepage = "https://github.com/z80dev/vyper-tree"
