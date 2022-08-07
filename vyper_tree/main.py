@@ -4,10 +4,15 @@ from rich.tree import Tree
 from rich.syntax import Syntax
 from rich.console import Group, Console
 
+from argparse import ArgumentParser
+
 from vyper_tree import main
 from vyper.compiler import phases
 from rich import pretty
 import sys
+
+parser = ArgumentParser(description='print vyper ASTs')
+parser.add_argument('--force-terminal', action="store_true", help="pass `force_terminal=True` to rich's console constructor. Use for overriding terminal detection and including colorized output even for file outputs.", dest='term')
 
 def node_printer(node):
     match node.ast_type:
@@ -48,7 +53,9 @@ def ast_to_rich_tree(node, rich_tree=None):
 def main():
     pretty.install()
 
-    console = Console(color_system="truecolor", force_terminal=True)
+    args = parser.parse_args()
+
+    console = Console(color_system="truecolor", force_terminal=args.term)
     src = ""
 
     for line in sys.stdin:
