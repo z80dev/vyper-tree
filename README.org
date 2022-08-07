@@ -15,7 +15,7 @@ pipx install vyper-tree
 via `pip` (for use as a module)
 
 #+begin_src  shell
-`pip install vyper-tree`
+pip install vyper-tree
 #+end_src
 ** Examples
 #+begin_src shell
