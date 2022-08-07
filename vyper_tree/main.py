@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 
-from vyper.compiler import phases
 from rich.tree import Tree
 from rich.syntax import Syntax
-from rich.console import Group
+from rich.console import Group, Console
+
+from vyper_tree import main
+from vyper.compiler import phases
+from rich import pretty
+import sys
 
 def node_printer(node):
     match node.ast_type:
@@ -40,3 +44,17 @@ def ast_to_rich_tree(node, rich_tree=None):
     for child_node in node.get_children():
         ast_to_rich_tree(child_node, rich_tree)
     return rich_tree
+
+if __name__ == "__main__":
+    pretty.install()
+
+    console = Console(color_system="truecolor", force_terminal=True)
+    src = ""
+
+    for line in sys.stdin:
+        src += line
+
+    ast = phases.generate_ast(src, 0, "")
+
+    tree = main.ast_to_rich_tree(ast)
+    console.print(tree)
