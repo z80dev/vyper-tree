@@ -13,7 +13,7 @@ import sys
 
 parser = ArgumentParser(description='print vyper ASTs')
 parser.add_argument('--force-terminal', action="store_true", help="pass `force_terminal=True` to rich's console constructor. Use for overriding terminal detection and including colorized output even for file outputs.", dest='term')
-parser.add_argument('--fold', action="store_true", help="export folded AST", dest='term')
+parser.add_argument('--fold', action="store_true", help="export folded AST")
 
 def node_printer(node):
     match node.ast_type:
