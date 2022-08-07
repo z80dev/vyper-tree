@@ -56,7 +56,7 @@ def main():
 
     ast = phases.generate_ast(src, 0, "")
 
-    tree = main.ast_to_rich_tree(ast)
+    tree = ast_to_rich_tree(ast)
     console.print(tree)
 
 if __name__ == "__main__":
