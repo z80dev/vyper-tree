@@ -17,5 +17,5 @@ pytest = "^5.2"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.plugins]
-"vyper-tree"= "vyper_tree:main"
+[tool.poetry.scripts]
+"vyper-tree" = "vyper_tree:main"

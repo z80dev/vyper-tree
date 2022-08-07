@@ -45,7 +45,7 @@ def ast_to_rich_tree(node, rich_tree=None):
         ast_to_rich_tree(child_node, rich_tree)
     return rich_tree
 
-if __name__ == "__main__":
+def main():
     pretty.install()
 
     console = Console(color_system="truecolor", force_terminal=True)
@@ -58,3 +58,6 @@ if __name__ == "__main__":
 
     tree = main.ast_to_rich_tree(ast)
     console.print(tree)
+
+if __name__ == "__main__":
+    main()
