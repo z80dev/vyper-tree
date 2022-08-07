@@ -19,7 +19,11 @@ pip install vyper-tree
 #+end_src
 ** Arguments
 #+begin_src shell
-vyper-tree --help
+> vyper-tree --help
+
+usage: vyper-tree [-h] [--force-terminal] [--fold] [--deployment-ir]
+                  [--runtime-ir]
+
 print vyper ASTs
 
 options:
@@ -27,7 +31,9 @@ options:
   --force-terminal  pass `force_terminal=True` to rich's console constructor.
                     Use for overriding terminal detection and including
                     colorized output even for file outputs.
-  --fold            export folded AST
+  --fold            print folded AST
+  --deployment-ir   print deployment IR
+  --runtime-ir      print runtime IR
 #+end_src
 ** Examples
 #+begin_src shell
